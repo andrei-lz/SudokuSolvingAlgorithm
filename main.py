@@ -4,7 +4,7 @@ import time
 def __main__():
     window = GUI.Window(1366, 768)
 
-    puzzle = GUI.SudokuGrid(window)
+    puzzle = GUI.SudokuGrid(window, 100, 100)
 
     while True:
         puzzle.draw()
