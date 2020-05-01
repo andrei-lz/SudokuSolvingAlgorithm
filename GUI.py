@@ -27,13 +27,15 @@ class SudokuGrid:
                                     0, 0, 0, 0, 0, 0, 0, 7, 4], [
                                         0, 0, 5, 2, 0, 6, 3, 0, 0]]
         self.window = window
+        self.cell_width = 50
+        self.cell_height = 50
 
     def draw(self):
         x = 100
         y = 100
         for i in range(len(self.grid)):  # Rows
             for j in range(len(self.grid[i])):  # Columns
-                self.window.canvas.create_line((x+1)*i, (y+1)*j, 500, 500)
+                self.window.canvas.create_rectangle(x + i * self.cell_width, y + i * self.cell_height)
 
     def is_valid(self) -> bool:
         for row in self.grid:
